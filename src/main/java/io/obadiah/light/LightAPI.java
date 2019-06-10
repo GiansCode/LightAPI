@@ -31,24 +31,24 @@ public interface LightAPI {
         throw new IllegalStateException(SpigotVersion.BUKKIT_VERSION + " is unsupported by LightPlugin.");
     }
 
-    void createLight(World world, int x, int y, int z, int lightLevel);
+    void setLight(World world, int x, int y, int z, int lightLevel);
 
-    default void createLight(World world, Vector vector, int lightLevel) {
-        this.createLight(world, vector.getBlockX(), vector.getBlockY(), vector.getBlockZ(), lightLevel);
+    default void setLight(World world, Vector vector, int lightLevel) {
+        this.setLight(world, vector.getBlockX(), vector.getBlockY(), vector.getBlockZ(), lightLevel);
     }
 
-    default void createLight(Location location, int lightLevel) {
-        this.createLight(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ(), lightLevel);
+    default void setLight(Location location, int lightLevel) {
+        this.setLight(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ(), lightLevel);
     }
 
-    void deleteLight(World world, int x, int y, int z);
+    void removeLight(World world, int x, int y, int z);
 
-    default void deleteLight(World world, Vector vector) {
-        this.deleteLight(world, vector.getBlockX(), vector.getBlockY(), vector.getBlockZ());
+    default void removeLight(World world, Vector vector) {
+        this.removeLight(world, vector.getBlockX(), vector.getBlockY(), vector.getBlockZ());
     }
 
-    default void deleteLight(Location location) {
-        this.deleteLight(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ());
+    default void removeLight(Location location) {
+        this.removeLight(location.getWorld(), location.getBlockX(), location.getBlockY(), location.getBlockZ());
     }
 
     void updateLight(World world, int x, int y, int z);
