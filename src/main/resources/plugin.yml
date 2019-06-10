@@ -1,0 +1,6 @@
+name: LightPlugin
+main: io.obadiah.light.LightPlugin
+version: 1.0-SNAPSHOT
+authors:
+  - Obadiah Crowe
+description: Small utility for modifying block light states.
