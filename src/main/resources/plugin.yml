@@ -1,4 +1,4 @@
-name: LightPlugin
+name: LightAPI
 main: io.obadiah.light.LightPlugin
 version: 1.0-SNAPSHOT
 authors:
