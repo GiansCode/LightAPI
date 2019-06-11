@@ -78,7 +78,9 @@ public interface LightAPI {
      * @param y Y-axis of the block.
      * @param z Z-axis of the block.
      */
-    void removeLight(World world, int x, int y, int z);
+    default void removeLight(World world, int x, int y, int z) {
+        this.updateLight(world, x, y, z);
+    }
 
     /**
      * Removes all light from a specific block.
